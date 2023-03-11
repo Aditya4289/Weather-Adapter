@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Wheather Adapter</title>
+    <style>
+        .home {
+            font-weight: bold;
+        }
+
+        li {
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        .mapouter {
+            position: relative;
+            text-align: left;
+            height: 510px;
+            width: 770px;
+        }
+    </style>
+    <style>
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 510px;
+            width: 1300px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg " style="background-color: #82c0f0;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><b>Wheather Adapter</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active home" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link services" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Our Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item handydevice" href="handydevice.html">Handy Wheather Station</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link help" href="help.html">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wheather" href="wheather.html">Weather</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" style="background-color: #d7f79c;"
+                        type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main style="background-color: #bbf5e3; height: 100%;">
+        <div class="intro"
+            style="background-image: url(assets/img/wheatherbg.png); background-size: cover; background-repeat: repeat-x;">
+            <h3 style="padding: 10px 30px 10px 30px; color: rgb(0, 0, 0);">INTRODUCTION</h3>
+            <p style="font-size: 20px; color: rgb(0, 0, 0); padding: 10px 30px; line-height: 30px; margin: 0px; ">
+                The program which we have created is a weather station that measures and records temperature, humidity,
+                pressure, and wind speed. It utilizes IoT technology, which allows the data to be sent and accessed
+                remotely via mobile devices. The device is designed to be durable and able to withstand harsh weather
+                conditions, making it suitable for outdoor use. The specific application or use of this weather station
+                may vary depending on the industry or field it is being used in, such as agriculture, meteorology, or
+                construction. It could be used for monitoring weather conditions in a specific location and providing
+                real-time data for forecasting and decision making.
+            </p>
+
+        </div>
+
+        <img src="img/features.png" width="100%" height="500px">
+        <div class="container " style="padding: 20px;">
+            <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                    <h3>Climate Graph</h3>
+                    <img src="img/climate.png" style="height: 200px;">
+                </div>
+                <div class="col-sm" style="text-align: center;">
+                    <h3>Air Pressure</h3>
+                    <img src="img/air pressure.png" style="height: 200px;">
+                </div>
+                <div class="col-sm" style="text-align: center;">
+                    <h3>Temperature</h3>
+                    <img src="img/temp.png" style="height: 200px;">
+                </div>
+                <div class="col-sm" style="text-align: center;">
+                    <h3>Wind Speed</h3>
+                    <img src="img/wind speed.png" style="height: 200px;">
+                </div>
+
+            </div>
+            <br><br><br>
+            <div class="col-centerDIv1" style="text-align: center;">
+            <h1>Map For location</h1>
+            <div class="col-centerDIv1">
+                <iframe id="GoogleMap-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3503.517361319537!2d77.16163951489226!3d28.58425228243685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1676795763894!5m2!1sen!2sin " width="1100
+                    " height="300" style="border:0; " allowfullscreen=" " loading="lazy " referrerpolicy="no-referrer-when-downgrade "></iframe>
+            </div>
+            </div>
+            <br><br>
+            <div class="sos" style="text-align: center;">
+                <h1>SOS Signals</h1>
+                <img src="img/sossignals.jpg" alt="" style="width: 970px; height: 400px;">
+            </div>
+            <hr>
+            <div class="feedback">
+                <h3 style="text-align: center;">TECHNOLOGY USED</h3>
+                <div class="container " style="padding: 20px;">
+                    <div class="row">
+                        <div class="col-sm" style="text-align: center;">
+                            <h3></h3>
+                            <img src="img/kotlin.jpg" style="height: 80px;">
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <h3></h3>
+                            <img src="img/swift.jpg" style="height: 80px;">
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <h3></h3>
+                            <img src="img/ibm.jpg" style="height: 80px;">
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <h3></h3>
+                            <img src="img/js.jpg" style="height: 80px;">
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <h3></h3>
+                            <img src="img/sql.jpg" style="height: 80px;">
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="feedback" style="text-align: center; text-decoration: none;">
+                        <a style="border: 2px solid black;padding: 10px; background-color: aliceblue; font-weight: bold; text-decoration: none;" href="feedback.html">Feedback Form</a>
+                    </div>
+               
+    </main>
+    <footer>
+        <div class="feet" style="background: black; color: white; text-align: center; padding: 2px;  ">
+            <p>© Copyright Weather Adapter</p>
+        </div>
+    </footer>
+</body>
+
+</html>

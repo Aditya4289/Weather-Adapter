@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head style="text-align: center;">
+    <title>Feedback Form</title>
+    <style>
+      /* Styles for form container */
+      .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #888888;
+      }
+
+      /* Styles for form input fields */
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      /* Styles for form submit button */
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+
+      /* Styles for form submit button when disabled */
+      input[type="submit"]:disabled {
+        background-color: #cccccc;
+        color: #666666;
+        cursor: default;
+      }
+
+      /* Styles for form label */
+      label {
+        padding: 12px 0 6px 0;
+        display: inline-block;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="submit-feedback.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+<br>
+<br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"  required>
+        <br>
+        <br>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+
+        <input type="submit" value="Submit" disabled>
+      </form>
+    </div>
+    <footer>
+      <div class="feet" style="background: black; color: white; text-align: center; padding: 2px;  ">
+          <h3>© Copyright Weather Adapter</h3>
+      </div>
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    background:url("img/Picture1.png");
+    /* height: 50px ; */
+}
+.items {
+    position: relative;
+    padding: 0px 15px;
+    background-color: #d8dcf4;
+    contain: content;
+    display: grid;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+    grid-template-columns: auto auto auto auto;
+}
+
+
